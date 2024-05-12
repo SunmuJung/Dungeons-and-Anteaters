@@ -1,54 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+// This class manages the health bar for the player.
+// Health Bar doesn't change the player's current health.
+// Instead, it only gets information of health from the player and visualizes.
 public class HealthBar : MonoBehaviour
 {
-    public Slider healthSlider;
-    public Slider easeHealthSlider;
-    public float maxHealth = 100f;
-    public float health; 
-    [SerializeField]
-    private float lerpSpeed = 10f;
+    // the slider representing the current health
+    private Slider healthSlider;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        health = maxHealth;
+        healthSlider = GetComponent<Slider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Sets the max health of the player to the given value,
+    // and sets current health to the max value.
+    public void SetMaxHealth(int maxHealth)
     {
-        if (healthSlider.value != health)
-        {
-            healthSlider.value = health;
-        }
+        healthSlider.maxValue = maxHealth;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            takeDamage(10);
-        }
-
-        if (easeHealthSlider.value != healthSlider.value)
-        {
-            easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, healthSlider.value, lerpSpeed * Time.deltaTime);
-        }
-
-
+        // changes current health to the new max value.
+        // might not be used.
+        healthSlider.value = maxHealth;
     }
-
-    void takeDamage(float damage)
+    
+    // sets the health represented by the health bar
+    // to the given health value.
+    public void SetHealth(int health)
     {
-        health -= damage;
+        healthSlider.value = health;
     }
-
-    public float gainHealth(float potion)
-    {
-        health += potion;
-        return health;
-    }
-
-
 }
