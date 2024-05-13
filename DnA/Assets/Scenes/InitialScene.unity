@@ -376,7 +376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &831518025
 Transform:
   m_ObjectHideFlags: 0
@@ -401,9 +401,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 831518024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71bf81eec70cc41b2aa5ca3f29c4c9f8, type: 3}
+  m_Script: {fileID: 11500000, guid: c45b9bce71c674b4aade92e56c8f325d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpeed: 3
+  jumpHeight: 2
+  playerHeigth: 0
+  dashForce: 5
+  dashCoolDown: 1
+  dashTime: 1
+  tail: {fileID: 0}
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &832788843
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +447,7 @@ RectTransform:
   m_Father: {fileID: 1973690689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -587,7 +597,7 @@ RectTransform:
   m_Father: {fileID: 658852967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.705, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -629,6 +639,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202716729}
   m_CullTransparentMesh: 1
+--- !u!1 &1220594023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1220594024}
+  m_Layer: 0
+  m_Name: SkillPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1220594024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220594023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.59, y: 0.71, z: 0}
+  m_LocalScale: {x: 1.0531083, y: 0.96465, z: 0.96465}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1479737974}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1226981012
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,8 +840,8 @@ Transform:
   m_GameObject: {fileID: 1411635319}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.02, y: 0, z: -10}
+  m_LocalScale: {x: 0.81733, y: 0.81733, z: 0.81733}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -818,6 +859,7 @@ GameObject:
   - component: {fileID: 1479737972}
   - component: {fileID: 1479737971}
   - component: {fileID: 1479737975}
+  - component: {fileID: 1479737976}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -839,13 +881,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 3
   jumpHeight: 8
+  playerHeigth: 1
   dashForce: 8
   dashCoolDown: 2
   dashTime: 1
-  ground:
-    serializedVersion: 2
-    m_Bits: 8
   tail: {fileID: 1479737975}
+  layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!61 &1479737972
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -932,6 +975,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1226981013}
+  - {fileID: 1220594024}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!96 &1479737975
@@ -1047,6 +1091,21 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1479737976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479737970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b02dabe31acd749b20b8a902897039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireFist: {fileID: 5245542938865558422, guid: a6dda79e8fb0bb641bd40b218b39de86, type: 3}
+  pos: {fileID: 1220594024}
+  cooldown: 2
 --- !u!1 &1484501935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1934206856
 Transform:
   m_ObjectHideFlags: 0
