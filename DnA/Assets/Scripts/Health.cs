@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] protected float maxHealth, health;
 
     //Heals the health of the object.
-    public void Heal(float heal){
+    public virtual void Heal(float heal){
         if(health + heal <= maxHealth){
             health += heal;
         }
@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     }
 
     //Damages the health of the object
-    public void Damage(float damage){
+    public virtual void Damage(float damage){
         if(health - damage <= 0f){
             OnDead();
         }
@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
     }
 
     //Does something when health is 0.
-    protected void OnDead(){
+    protected virtual void OnDead(){
         Destroy(gameObject);
     }
 }

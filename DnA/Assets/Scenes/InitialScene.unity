@@ -861,13 +861,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 3
   jumpHeight: 8
+  playerHeigth: 0
   dashForce: 8
   dashCoolDown: 2
   dashTime: 1
-  ground:
-    serializedVersion: 2
-    m_Bits: 8
   tail: {fileID: 1479737975}
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &1479737972
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class HealthBar : MonoBehaviour
 
     // Sets the max health of the player to the given value,
     // and sets current health to the max value.
-    public void SetMaxHealth(int maxHealth)
+    public void SetMaxHealth(float maxHealth)
     {
         healthSlider.maxValue = maxHealth;
 
@@ -31,7 +31,7 @@ public class HealthBar : MonoBehaviour
     
     // sets the health represented by the health bar
     // to the given health value.
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         healthSlider.value = health;
     }
