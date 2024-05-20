@@ -67,6 +67,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""fireSkill"",
                     ""type"": ""Button"",
                     ""id"": ""01a077fa-8b49-4daf-a8d6-bd91fb9619a0"",
+                    ""name"": ""ColdSkill"",
+                    ""type"": ""Button"",
+                    ""id"": ""df1a2009-faa0-4120-94dc-d0efd335c0ac"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -148,6 +151,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""fireSkill"",
+                    ""id"": ""897654c1-5632-4e48-8f5b-3a7f828b62ec"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ColdSkill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -163,6 +172,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_BasicAttack = m_Player.FindAction("BasicAttack", throwIfNotFound: true);
         m_Player_fireSkill = m_Player.FindAction("fireSkill", throwIfNotFound: true);
+        m_Player_ColdSkill = m_Player.FindAction("ColdSkill", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +239,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_BasicAttack;
     private readonly InputAction m_Player_fireSkill;
+    private readonly InputAction m_Player_ColdSkill;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -238,6 +249,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @BasicAttack => m_Wrapper.m_Player_BasicAttack;
         public InputAction @fireSkill => m_Wrapper.m_Player_fireSkill;
+        public InputAction @ColdSkill => m_Wrapper.m_Player_ColdSkill;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -262,6 +274,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @fireSkill.started += instance.OnFireSkill;
             @fireSkill.performed += instance.OnFireSkill;
             @fireSkill.canceled += instance.OnFireSkill;
+            @ColdSkill.started += instance.OnColdSkill;
+            @ColdSkill.performed += instance.OnColdSkill;
+            @ColdSkill.canceled += instance.OnColdSkill;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -281,6 +296,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @fireSkill.started -= instance.OnFireSkill;
             @fireSkill.performed -= instance.OnFireSkill;
             @fireSkill.canceled -= instance.OnFireSkill;
+            @ColdSkill.started -= instance.OnColdSkill;
+            @ColdSkill.performed -= instance.OnColdSkill;
+            @ColdSkill.canceled -= instance.OnColdSkill;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -305,5 +323,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnBasicAttack(InputAction.CallbackContext context);
         void OnFireSkill(InputAction.CallbackContext context);
+        void OnColdSkill(InputAction.CallbackContext context);
     }
 }
