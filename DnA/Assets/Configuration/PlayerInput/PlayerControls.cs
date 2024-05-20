@@ -64,6 +64,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""fireSkill"",
+                    ""type"": ""Button"",
+                    ""id"": ""01a077fa-8b49-4daf-a8d6-bd91fb9619a0"",
                     ""name"": ""ColdSkill"",
                     ""type"": ""Button"",
                     ""id"": ""df1a2009-faa0-4120-94dc-d0efd335c0ac"",
@@ -142,6 +145,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""f6926d6c-abad-4e1d-a358-4d6bb6e53427"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""fireSkill"",
                     ""id"": ""897654c1-5632-4e48-8f5b-3a7f828b62ec"",
                     ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
@@ -162,6 +171,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_BasicAttack = m_Player.FindAction("BasicAttack", throwIfNotFound: true);
+        m_Player_fireSkill = m_Player.FindAction("fireSkill", throwIfNotFound: true);
         m_Player_ColdSkill = m_Player.FindAction("ColdSkill", throwIfNotFound: true);
     }
 
@@ -228,6 +238,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_BasicAttack;
+    private readonly InputAction m_Player_fireSkill;
     private readonly InputAction m_Player_ColdSkill;
     public struct PlayerActions
     {
@@ -237,6 +248,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @BasicAttack => m_Wrapper.m_Player_BasicAttack;
+        public InputAction @fireSkill => m_Wrapper.m_Player_fireSkill;
         public InputAction @ColdSkill => m_Wrapper.m_Player_ColdSkill;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -259,6 +271,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.started += instance.OnBasicAttack;
             @BasicAttack.performed += instance.OnBasicAttack;
             @BasicAttack.canceled += instance.OnBasicAttack;
+            @fireSkill.started += instance.OnFireSkill;
+            @fireSkill.performed += instance.OnFireSkill;
+            @fireSkill.canceled += instance.OnFireSkill;
             @ColdSkill.started += instance.OnColdSkill;
             @ColdSkill.performed += instance.OnColdSkill;
             @ColdSkill.canceled += instance.OnColdSkill;
@@ -278,6 +293,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @BasicAttack.started -= instance.OnBasicAttack;
             @BasicAttack.performed -= instance.OnBasicAttack;
             @BasicAttack.canceled -= instance.OnBasicAttack;
+            @fireSkill.started -= instance.OnFireSkill;
+            @fireSkill.performed -= instance.OnFireSkill;
+            @fireSkill.canceled -= instance.OnFireSkill;
             @ColdSkill.started -= instance.OnColdSkill;
             @ColdSkill.performed -= instance.OnColdSkill;
             @ColdSkill.canceled -= instance.OnColdSkill;
@@ -304,6 +322,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnBasicAttack(InputAction.CallbackContext context);
+        void OnFireSkill(InputAction.CallbackContext context);
         void OnColdSkill(InputAction.CallbackContext context);
     }
 }
