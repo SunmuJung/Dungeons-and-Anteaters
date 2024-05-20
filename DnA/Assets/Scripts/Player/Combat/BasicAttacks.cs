@@ -35,6 +35,8 @@ public class BasicAttacks : MonoBehaviour
         }
         //Casts a circle and does damage to any objects in that layer with a health script.
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, radious, dir, range, attackLayer);
-        hit.collider?.GetComponent<Health>().Damage(damage);
+        if(hit.collider == null){
+            hit.collider?.GetComponent<Health>().Damage(damage);
+        }
     }
 }
