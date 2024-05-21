@@ -45,9 +45,15 @@
                     "name": "fireSkill",
                     "type": "Button",
                     "id": "01a077fa-8b49-4daf-a8d6-bd91fb9619a0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "ColdSkill",
                     "type": "Button",
-                    "id": "df1a2009-faa0-4120-94dc-d0efd335c0ac",
+                    "id": "2da01baf-b71a-4a6f-9d68-20010cfc427a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -129,7 +135,12 @@
                     "processors": "",
                     "groups": "",
                     "action": "fireSkill",
-                    "id": "897654c1-5632-4e48-8f5b-3a7f828b62ec",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a51c697-6a45-4dee-b810-618032aa594e",
                     "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
