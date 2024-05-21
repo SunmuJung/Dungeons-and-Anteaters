@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20a37e917b951644b92f32a9fc775fc9
+guid: 7db4e8a8aa5ef6b42b768808516bdddb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 96
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: corner tiles 64_0
+      name: side tiles_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe3d7b3e8ceca464fb4a8faee12ee88c
-      internalID: -270036466
+      spriteID: eca4512f6462dfa42a787bce62f908ce
+      internalID: -1972502388
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      corner tiles 64_0: -270036466
+      side tiles_0: -1972502388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
