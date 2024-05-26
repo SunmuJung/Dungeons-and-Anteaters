@@ -316,6 +316,7 @@ GameObject:
   - component: {fileID: 714126818}
   - component: {fileID: 714126817}
   - component: {fileID: 714126816}
+  - component: {fileID: 714126820}
   m_Layer: 0
   m_Name: EnemyDraft
   m_TagString: Untagged
@@ -436,6 +437,21 @@ Transform:
   - {fileID: 93165113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &714126820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714126815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87b428c2ea02d14cbb933401ea94406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 100
+  debug: 0
 --- !u!1 &740015176
 GameObject:
   m_ObjectHideFlags: 0
