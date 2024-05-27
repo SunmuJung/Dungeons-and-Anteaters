@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class spear : MonoBehaviour
 {
-    [SerializeField] private float speed, lifetime;
+    [SerializeField] private float speed, lifetime, damage;
     private Vector2 direction = Vector2.right;
     public Vector2 Direction {set { direction = value;} }
+
+    
 
     void Start()
     {
@@ -20,4 +22,15 @@ public class spear : MonoBehaviour
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
+    // Detects whether the spear is hit
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Spear Hit");
+        if (collision.gameObject.tag != "Player")
+        {
+            collision.gameObject.GetComponent<Health>()?.Damage(damage);
+            Destroy(gameObject);
+        }
+            
+    }
 }

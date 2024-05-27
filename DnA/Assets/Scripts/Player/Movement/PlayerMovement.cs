@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     //Adds impulsive force upwards on the player eveytime the player is over a "steppable" object.
     private void JumpStarted(InputAction.CallbackContext context)
     {
-        if (Physics2D.Raycast(transform.position, Vector2.down, playerHeigth, layer).collider != null)
+        if (Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.1f, layer).collider != null)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpHeight), ForceMode2D.Impulse);
         }
