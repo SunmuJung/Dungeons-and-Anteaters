@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerControls playerControls;
     private bool hasDashed, facingRight = true;
     private Vector2 playerDirection;
+    //Property only read tells if the player is facing right.
+    public bool FacingRight{get{return facingRight;}}
 
     //Use New Input System by creating an instance then subscribing methods to the events.
     private void Awake()
@@ -25,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Player.Movement.canceled += Movement;
         playerControls.Player.Jump.started += JumpStarted;
         playerControls.Player.Dash.started += Dash;
-        playerControls.Enable();
+        OnEnable();
     }
 
     //Gets the rigid body of the player.
@@ -33,11 +35,19 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
+    
+    private void OnEnable() {
+        playerControls.Player.Movement.Enable();
+        playerControls.Player.Jump.Enable();
+        playerControls.Player.Dash.Enable();
+    }
 
     //Helper method to disble the movement system.
     private void OnDisable()
     {
-        playerControls.Disable();
+        playerControls.Player.Movement.Disable();
+        playerControls.Player.Jump.Disable();
+        playerControls.Player.Dash.Disable();
     }
 
     //Updates movement of the player every frame.
@@ -49,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     //Adds impulsive force upwards on the player eveytime the player is over a "steppable" object.
     private void JumpStarted(InputAction.CallbackContext context)
     {
-        if (Physics2D.Raycast(transform.position, Vector2.down, playerHeigth, layer).collider != null)
+        if (Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.1f, layer).collider != null)
         {
             rb.AddForce(new Vector2(rb.velocity.x, jumpHeight), ForceMode2D.Impulse);
         }
@@ -68,9 +78,9 @@ public class PlayerMovement : MonoBehaviour
     //Flips the sprite whenever the player changes direction.
     private void Flip()
     {
-        Vector2 scale = rb.transform.localScale;
+        Vector2 scale = transform.localScale;
         scale.x *= -1f;
-        rb.transform.localScale = scale;
+        transform.localScale = scale;
         facingRight = !facingRight;
     }
 
