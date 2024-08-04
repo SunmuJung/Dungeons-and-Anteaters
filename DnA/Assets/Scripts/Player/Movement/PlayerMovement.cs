@@ -2,12 +2,15 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 //This class is in charge on managing the movement of the player; back and forth, jumping, and dashing.
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float playerSpeed, jumpHeight, playerHeigth,
                                    dashForce, dashCoolDown, dashTime;
+    [SerializeField] private int additionalJumpCount;
+    [SerializeField] private int jumpCount;
     [SerializeField] private TrailRenderer tail;
     [SerializeField] private LayerMask layer;
 
@@ -25,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Player.Movement.started += Movement;
         playerControls.Player.Movement.performed += Movement;
         playerControls.Player.Movement.canceled += Movement;
-        playerControls.Player.Jump.started += JumpStarted;
+        playerControls.Player.Jump.started += Jump;
         playerControls.Player.Dash.started += Dash;
         OnEnable();
     }
@@ -54,14 +57,41 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         transform.position += (Vector3)playerDirection * Time.deltaTime;
+        GroundCheck();
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.1f, layer).collider != null;
+    }
+
+    private bool OnGround()
+    {
+        return IsGrounded() && Mathf.Abs(rb.velocity.y) <= 0.01f;
+    }
+
+    private void GroundCheck()
+    {
+        if (OnGround()) jumpCount = 0;
     }
 
     //Adds impulsive force upwards on the player eveytime the player is over a "steppable" object.
-    private void JumpStarted(InputAction.CallbackContext context)
+    private void Jump(InputAction.CallbackContext context)
     {
-        if (Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.1f, layer).collider != null)
+        
+        if (IsGrounded())
         {
+            rb.velocity = Vector3.zero;
             rb.AddForce(new Vector2(rb.velocity.x, jumpHeight), ForceMode2D.Impulse);
+        }
+        else
+        {
+             if (jumpCount < additionalJumpCount)
+            {
+                rb.velocity = Vector3.zero;
+                rb.AddForce(new Vector2(rb.velocity.x, jumpHeight), ForceMode2D.Impulse);
+                ++jumpCount;
+            }
         }
     }
 
@@ -100,15 +130,17 @@ public class PlayerMovement : MonoBehaviour
         float gravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashForce, 0f);
-
         //Emits a nice trail behind the player
         tail.emitting = true;
+        playerControls.Player.Movement.Disable();
 
         yield return new WaitForSecondsRealtime(length);
-        rb.gravityScale = gravity;
 
+        rb.gravityScale = gravity;
+        rb.velocity = Vector2.zero;
         //Stops emitting a nice trail behind the player
         tail.emitting = false;
+        playerControls.Player.Movement.Enable();
 
         yield return new WaitForSecondsRealtime(coolDown);
         hasDashed = false;
