@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAITest : MonoBehaviour
 {
-    [SerializeField] protected float speed, damage, enemyHealth, playerDetectionRange,
+    [SerializeField]
+    protected float speed, damage, enemyHealth, playerDetectionRange,
                                    attackRange, attackRadious, attackCoolDown,
-                                   rigorCoolDown, rigorGauge; 
+                                   rigorCoolDown, rigorGauge;
     [SerializeField] protected Transform attackSpot;
     [SerializeField] protected string playerTag;
     [SerializeField] protected Transform[] patrolPoints;
@@ -15,7 +16,8 @@ public class EnemyAI : MonoBehaviour
     protected int currentPatrolPoint;
     protected bool isFacingRight, canAttack, rigorStarted;
 
-    protected enum State {
+    protected enum State
+    {
         Idle,
         Chasing,
         Attacking,
@@ -25,78 +27,97 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        switch (enemyState){
+        switch (enemyState)
+        {
             case State.Idle:
                 targetPoint = patrolPoints[currentPatrolPoint];
                 Movement();
-                if (enemyHealth <= 0){
+                if (enemyHealth <= 0)
+                {
                     enemyState = State.Dead;
                 }
-                else if (rigorGauge == 0){
+                else if (rigorGauge == 0)
+                {
                     enemyState = State.Rigor;
                 }
-                else if (DetectPlayer(attackRange)){
+                else if (DetectPlayer(attackRange))
+                {
                     enemyState = State.Attacking;
                 }
-                else if(DetectPlayer(playerDetectionRange)){
+                else if (DetectPlayer(playerDetectionRange))
+                {
                     enemyState = State.Chasing;
                 }
                 break;
             case State.Chasing:
                 targetPoint = playerPosition;
                 Movement();
-                if (enemyHealth <= 0){  
-                    enemyState = State.Dead; 
-                }
-                else if (rigorGauge == 0) { 
-                    enemyState = State.Rigor; 
-                }
-                else if(DetectPlayer(attackRange)){
-                    enemyState = State.Attacking;
-                }
-                else if (!DetectPlayer(playerDetectionRange)){
-                    enemyState = State.Idle;
-                }
-                break; 
-            case State.Attacking:
-                if (enemyHealth <= 0){
+                if (enemyHealth <= 0)
+                {
                     enemyState = State.Dead;
                 }
-                else if (rigorGauge == 0){ 
-                    enemyState = State.Rigor; 
+                else if (rigorGauge == 0)
+                {
+                    enemyState = State.Rigor;
                 }
-                else if(canAttack){
+                else if (DetectPlayer(attackRange))
+                {
+                    enemyState = State.Attacking;
+                }
+                else if (!DetectPlayer(playerDetectionRange))
+                {
+                    enemyState = State.Idle;
+                }
+                break;
+            case State.Attacking:
+                if (enemyHealth <= 0)
+                {
+                    enemyState = State.Dead;
+                }
+                else if (rigorGauge == 0)
+                {
+                    enemyState = State.Rigor;
+                }
+                else if (canAttack)
+                {
                     Attack();
                     StartCoroutine(AttackCoolDown());
                 }
-                else if(!DetectPlayer(playerDetectionRange)){
+                else if (!DetectPlayer(playerDetectionRange))
+                {
                     canAttack = false;
                     enemyState = State.Idle;
                 }
-                else if (!DetectPlayer(attackRange)){
+                else if (!DetectPlayer(attackRange))
+                {
                     canAttack = false;
                     enemyState = State.Chasing;
                 }
                 break;
             case State.Rigor:
-                if(!rigorStarted){
+                if (!rigorStarted)
+                {
                     StartCoroutine(RigorCoolDown());
                 }
                 break;
         }
     }
 
-    protected virtual void Start(){
+    protected virtual void Start()
+    {
         enemyState = State.Idle;
         targetPoint = patrolPoints[currentPatrolPoint];
         canAttack = true;
     }
 
     //Checks if the player is at a certain distance away from the enemy.
-    protected virtual bool DetectPlayer(float radious){
+    protected virtual bool DetectPlayer(float radious)
+    {
         Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, radious);
-        foreach (Collider2D target in collisions){
-            if(target?.gameObject.tag == playerTag){
+        foreach (Collider2D target in collisions)
+        {
+            if (target?.gameObject.tag == playerTag)
+            {
                 playerPosition = target.transform;
                 return true;
             }
@@ -104,19 +125,24 @@ public class EnemyAI : MonoBehaviour
         return false;
     }
 
-    protected virtual void Attack(){
+    protected virtual void Attack()
+    {
         Collider2D hit = Physics2D.OverlapCircle(attackSpot.position, attackRadious);
         hit?.GetComponent<Health>()?.Damage(damage);
     }
 
     //Moves the enemy to the patrol location in the array if it has reached it,
     //it should switch tot he next one.
-    protected virtual void Movement(){
-        if(Vector2.Distance(transform.position, targetPoint.position) <= attackRange){
-            if(currentPatrolPoint == patrolPoints.Length-1){
+    protected virtual void Movement()
+    {
+        if (Vector2.Distance(transform.position, targetPoint.position) <= attackRange)
+        {
+            if (currentPatrolPoint == patrolPoints.Length - 1)
+            {
                 currentPatrolPoint = 0;
             }
-            else{
+            else
+            {
                 currentPatrolPoint++;
             }
             targetPoint = patrolPoints[currentPatrolPoint];
@@ -124,11 +150,11 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 dir = targetPoint.position - transform.position;
 
-        if(isFacingRight && dir.x < 0f || !isFacingRight && dir.x > 0f)
+        if (isFacingRight && dir.x < 0f || !isFacingRight && dir.x > 0f)
         {
             Flip();
         }
-        transform.position += new Vector3(dir.x, 0f,0f).normalized * speed * Time.deltaTime;
+        transform.position += new Vector3(dir.x, 0f, 0f).normalized * speed * Time.deltaTime;
     }
 
     //Flips the sprite whenever the player changes direction.
@@ -140,15 +166,17 @@ public class EnemyAI : MonoBehaviour
         isFacingRight = !isFacingRight;
     }
 
-    protected virtual IEnumerator AttackCoolDown(){
+    protected virtual IEnumerator AttackCoolDown()
+    {
         canAttack = false;
         yield return new WaitForSeconds(attackCoolDown);
         canAttack = true;
     }
 
-    protected virtual IEnumerator RigorCoolDown(){
+    protected virtual IEnumerator RigorCoolDown()
+    {
         rigorStarted = true;
-        State temp  = enemyState;
+        State temp = enemyState;
         yield return new WaitForSeconds(rigorCoolDown);
         rigorStarted = false;
         enemyState = temp;
