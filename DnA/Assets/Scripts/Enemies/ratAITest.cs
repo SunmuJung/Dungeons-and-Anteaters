@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class ratAITest : MonoBehaviour
 {
     [SerializeField]
     protected float speed, damage, playerDetectionRange,
@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected Transform attackSpot;
     [SerializeField] protected string playerTag;
     [SerializeField] protected Transform[] patrolPoints;
+    [SerializeField] protected float health = 100;
     protected State enemyState;
     protected Transform targetPoint, playerPosition;
     protected int currentPatrolPoint;
@@ -68,6 +69,10 @@ public class EnemyAI : MonoBehaviour
                 if (!rigorStarted)
                 {
                     StartCoroutine(RigorCoolDown());
+                }
+                if (health <= 0)
+                {
+                    enemyState = State.Dead;
                 }
                 break;
         }
@@ -150,5 +155,10 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(rigorCoolDown);
         rigorStarted = false;
         enemyState = temp;
+    }
+
+    protected void OnDamage(float damage)
+    {
+
     }
 }
