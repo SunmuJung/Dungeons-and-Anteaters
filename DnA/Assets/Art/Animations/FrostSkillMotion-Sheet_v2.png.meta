@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 466c0f820aab93640be57a8bf94190b3
+guid: 003fb6f852176494da3adc7112f17aae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,211 +110,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BA2-Sheet_0
+      name: FrostSkillMotion-Sheet_v2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 240
+        height: 100
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4deb3824459caf84ea582dea89b2bde3
+      internalID: -2094434434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSkillMotion-Sheet_v2_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 100
+        width: 240
+        height: 100
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e270b3e9364c00e40b6afce5511f8dda
+      internalID: 877840152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSkillMotion-Sheet_v2_2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 100
+        width: 240
+        height: 100
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951f2b5c6712d884691d3c4308025546
+      internalID: -120321843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSkillMotion-Sheet_v2_3
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 100
+        width: 240
+        height: 100
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666738d682e290a41bf8514a97d846dc
+      internalID: 405928458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSkillMotion-Sheet_v2_4
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 100
+        width: 240
+        height: 100
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4c382acab014164aa31a201ee8b0252
+      internalID: 163200497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSkillMotion-Sheet_v2_5
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 100
+        width: 240
+        height: 100
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f16281c108c4642b16ac585473ade1
+      internalID: 67105049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FrostSkillMotion-Sheet_v2_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
+        width: 240
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc6fabfcb6c7eae4bb9ad7ed32ac9e06
-      internalID: -1895334893
+      spriteID: 8e509acfb4b40d240af35457d0406c0d
+      internalID: 1975311958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA2-Sheet_1
+      name: FrostSkillMotion-Sheet_v2_7
       rect:
         serializedVersion: 2
-        x: 200
+        x: 240
         y: 0
-        width: 200
+        width: 240
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dffd5fc476a958742823bbf9d256b7a0
-      internalID: -1318194055
+      spriteID: 391011cc0931f0f47bbc173be7c3f842
+      internalID: 1535223778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA2-Sheet_2
+      name: FrostSkillMotion-Sheet_v2_8
       rect:
         serializedVersion: 2
-        x: 400
+        x: 480
         y: 0
-        width: 200
+        width: 240
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e52f29560e33334e9af547a420f5ad9
-      internalID: 1469992512
+      spriteID: 92713b515c438044293dc5b08e6d7656
+      internalID: 1898377330
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA2-Sheet_3
+      name: FrostSkillMotion-Sheet_v2_9
       rect:
         serializedVersion: 2
-        x: 600
+        x: 720
         y: 0
-        width: 200
+        width: 240
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cbb9b1aed5f3fe4d92f36be1bfdf26a
-      internalID: -1510617726
+      spriteID: 264c954d4741e084a93dc07598bdff6a
+      internalID: 950619445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA2-Sheet_4
+      name: FrostSkillMotion-Sheet_v2_10
       rect:
         serializedVersion: 2
-        x: 800
+        x: 960
         y: 0
-        width: 200
+        width: 240
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7f44704b2fd8854b9dba1b710c39360
-      internalID: -1459815993
+      spriteID: 807634bd7f7285443870948ade6d2f55
+      internalID: 1629381437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA2-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 200
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e883c64f6c737648a0b95f1295ca84a
-      internalID: -628074505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA2-Sheet_6
+      name: FrostSkillMotion-Sheet_v2_11
       rect:
         serializedVersion: 2
         x: 1200
         y: 0
-        width: 200
+        width: 240
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.52, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2bc31c60a6562e41b8062c6e000ea90
-      internalID: -875654832
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA2-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 0
-        width: 200
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd0fde4f3340a7a4da5e1b101ece6710
-      internalID: 23557820
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA2-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 200
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 530425959a592cf49b3bb463dd7111f2
-      internalID: 170354000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA2-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 200
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e4fba3d7ce92784faf1fa1cf31a08d3
-      internalID: 1191687062
+      spriteID: afe714decf3993b4e9540f23fea07df3
+      internalID: -504148313
       vertices: []
       indices: 
       edges: []
@@ -330,16 +372,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BA2-Sheet_0: -1895334893
-      BA2-Sheet_1: -1318194055
-      BA2-Sheet_2: 1469992512
-      BA2-Sheet_3: -1510617726
-      BA2-Sheet_4: -1459815993
-      BA2-Sheet_5: -628074505
-      BA2-Sheet_6: -875654832
-      BA2-Sheet_7: 23557820
-      BA2-Sheet_8: 170354000
-      BA2-Sheet_9: 1191687062
+      FrostSkillMotion-Sheet_v2_0: -2094434434
+      FrostSkillMotion-Sheet_v2_1: 877840152
+      FrostSkillMotion-Sheet_v2_10: 1629381437
+      FrostSkillMotion-Sheet_v2_11: -504148313
+      FrostSkillMotion-Sheet_v2_2: -120321843
+      FrostSkillMotion-Sheet_v2_3: 405928458
+      FrostSkillMotion-Sheet_v2_4: 163200497
+      FrostSkillMotion-Sheet_v2_5: 67105049
+      FrostSkillMotion-Sheet_v2_6: 1975311958
+      FrostSkillMotion-Sheet_v2_7: 1535223778
+      FrostSkillMotion-Sheet_v2_8: 1898377330
+      FrostSkillMotion-Sheet_v2_9: 950619445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

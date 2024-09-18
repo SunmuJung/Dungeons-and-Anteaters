@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5571490ef693dc14e92c4c40dc40dced
+guid: 56da1f162a93ed64a8d65a43394e22e9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,190 +110,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle_0
+      name: BA2-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 041c2761ed321c6439189c11797af2cb
-      internalID: 1817794438
+      spriteID: 36f832db23e9b4c4b85fd01afe4241a5
+      internalID: 664080413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_1
+      name: BA2-Sheet_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 180
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ec3f0203e3d90b4d88a08c61dd8d300
-      internalID: 1635281582
+      spriteID: d051fa8ad90400e4f84029794226d8e3
+      internalID: 195983115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_2
+      name: BA2-Sheet_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 360
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96bb87e96b812514cad68d8fd88972f8
-      internalID: -1250483934
+      spriteID: 2e4154a2ff44b1c4b8596ad5db650fa5
+      internalID: -750806785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_3
+      name: BA2-Sheet_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 540
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44f1fc2b2a01b964787c8610cbc1b60e
-      internalID: -1961650503
+      spriteID: 944b9ac8d6e565348bd24d8e9e21e3af
+      internalID: -409122519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_4
+      name: BA2-Sheet_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 720
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ff23f37b29c2944bb89652f4997d63d
-      internalID: 336670909
+      spriteID: 2cd09f2128156734683fef7473cdfce8
+      internalID: -1339567919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_5
+      name: BA2-Sheet_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 900
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97adb1c9e3e8d8745852ec83e384481f
-      internalID: -1678846932
+      spriteID: 14afabe56cd51d44492e56624f0f20b8
+      internalID: -1127318869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_6
+      name: BA2-Sheet_6
       rect:
         serializedVersion: 2
-        x: 384
+        x: 1080
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d85b93ce0381501438e5c8e3cf818900
-      internalID: -1550008846
+      spriteID: 8422263448e3e344086f63c614b7a57f
+      internalID: -62942259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_7
+      name: BA2-Sheet_7
       rect:
         serializedVersion: 2
-        x: 448
+        x: 1260
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a467c3d7e812d849b123157dc575759
-      internalID: 418615750
+      spriteID: 1dba8541575b7a643a0e3d88e2253cf6
+      internalID: 341163329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_8
+      name: BA2-Sheet_8
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1440
         y: 0
-        width: 64
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27d0ac2e63a921d4fac4c31a666eb272
-      internalID: 1410015457
+      spriteID: a39ca45854a55cc408cf9513e588540c
+      internalID: -1134185711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BA2-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 0
+        width: 180
+        height: 100
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2745e92dc9a28a245bbddccfbbda4bc9
+      internalID: 1644138964
       vertices: []
       indices: 
       edges: []
@@ -309,15 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Idle_0: 1817794438
-      Player_Idle_1: 1635281582
-      Player_Idle_2: -1250483934
-      Player_Idle_3: -1961650503
-      Player_Idle_4: 336670909
-      Player_Idle_5: -1678846932
-      Player_Idle_6: -1550008846
-      Player_Idle_7: 418615750
-      Player_Idle_8: 1410015457
+      BA2-Sheet_0: 664080413
+      BA2-Sheet_1: 195983115
+      BA2-Sheet_2: -750806785
+      BA2-Sheet_3: -409122519
+      BA2-Sheet_4: -1339567919
+      BA2-Sheet_5: -1127318869
+      BA2-Sheet_6: -62942259
+      BA2-Sheet_7: 341163329
+      BA2-Sheet_8: -1134185711
+      BA2-Sheet_9: 1644138964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

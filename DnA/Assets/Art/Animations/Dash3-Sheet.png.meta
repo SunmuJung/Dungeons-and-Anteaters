@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d2910bf021ba0284e8b2168132135426
+guid: 184b116fa626c754f937c024a4f9238d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,190 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BA3-Sheet_0
+      name: Dash3-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 200
+        width: 180
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e60248b81aa7074ebc50104cdf39eb5
-      internalID: -2086492750
+      spriteID: 7c5cde33a6d3ad44abf4079868104897
+      internalID: -1365445283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA3-Sheet_1
+      name: Dash3-Sheet_1
       rect:
         serializedVersion: 2
-        x: 200
+        x: 180
         y: 0
-        width: 200
+        width: 180
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70267d6bc8322344fb20bd60db49e6d6
-      internalID: 1268563449
+      spriteID: 568a3aab29aaa594ea0d8c39537304e3
+      internalID: -1227958064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA3-Sheet_2
+      name: Dash3-Sheet_2
       rect:
         serializedVersion: 2
-        x: 400
+        x: 360
         y: 0
-        width: 200
+        width: 180
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 262acbdc6a7b9534688c5353f2043822
-      internalID: 559047949
+      spriteID: 7727516cdfad4b544b902e4eb80cba03
+      internalID: -1477038775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA3-Sheet_3
+      name: Dash3-Sheet_3
       rect:
         serializedVersion: 2
-        x: 600
+        x: 540
         y: 0
-        width: 200
+        width: 180
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39e3957299b5f354e8eb0a5b3ffc91fd
-      internalID: -194950965
+      spriteID: dc19f1aa7b5bcda439cc3d16035dd7b0
+      internalID: -157315359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA3-Sheet_4
+      name: Dash3-Sheet_4
       rect:
         serializedVersion: 2
-        x: 800
+        x: 720
         y: 0
-        width: 200
+        width: 180
         height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.36, y: 0.36}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d96ed58bf4977bc4ab2fa3ba1a47c986
-      internalID: 871931797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 200
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9cc043c279c5c7848929ded7f7b25264
-      internalID: -917700923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 200
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b04a9ee437ff8f40bb7e6b2689f0bbc
-      internalID: -1672510874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 0
-        width: 200
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87980a1fb4d004649acbd204e1c4ff71
-      internalID: -1990086504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 200
-        height: 100
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1b1ba0c39d55cb4a957957ee4f5872e
-      internalID: -862135104
+      spriteID: 4705486190ac48d4eae52293d4771ee4
+      internalID: -396994250
       vertices: []
       indices: 
       edges: []
@@ -309,15 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BA3-Sheet_0: -2086492750
-      BA3-Sheet_1: 1268563449
-      BA3-Sheet_2: 559047949
-      BA3-Sheet_3: -194950965
-      BA3-Sheet_4: 871931797
-      BA3-Sheet_5: -917700923
-      BA3-Sheet_6: -1672510874
-      BA3-Sheet_7: -1990086504
-      BA3-Sheet_8: -862135104
+      Dash3-Sheet_0: -1365445283
+      Dash3-Sheet_1: -1227958064
+      Dash3-Sheet_2: -1477038775
+      Dash3-Sheet_3: -157315359
+      Dash3-Sheet_4: -396994250
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
