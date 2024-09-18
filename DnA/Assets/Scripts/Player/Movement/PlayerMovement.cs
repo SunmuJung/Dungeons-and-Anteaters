@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private PlayerControls playerControls;
+    protected Animator animator;
     private bool hasDashed, facingRight = true;
     private Vector2 playerDirection;
     //Property only read tells if the player is facing right.
@@ -24,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     //Use New Input System by creating an instance then subscribing methods to the events.
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+
         playerControls = new();
         playerControls.Player.Movement.started += Movement;
         playerControls.Player.Movement.performed += Movement;
@@ -78,6 +81,9 @@ public class PlayerMovement : MonoBehaviour
     //Adds impulsive force upwards on the player eveytime the player is over a "steppable" object.
     private void Jump(InputAction.CallbackContext context)
     {
+        // if (animator.is)
+        animator.SetTrigger("Jump");
+
         
         if (IsGrounded())
         {
@@ -119,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!hasDashed)
         {
+            animator.SetTrigger("Dash");
             StartCoroutine(DashTimer(dashCoolDown, dashTime));
         }
     }
