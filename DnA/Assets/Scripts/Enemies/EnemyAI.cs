@@ -10,12 +10,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected Transform attackSpot;
     [SerializeField] protected string playerTag;
     [SerializeField] protected Transform[] patrolPoints;
-    protected State enemyState;
+    [SerializeField] protected State enemyState;
     protected Transform targetPoint, playerPosition;
     protected int currentPatrolPoint;
-    protected bool isFacingRight, canAttack, rigorStarted;
+    public bool isFacingRight, canAttack, rigorStarted;
 
-    protected enum State {
+    public enum State {
         Idle,
         Chasing,
         Attacking,
@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour
         Dead
     }
 
-    private void Update()
+    public virtual void Update()
     {
         switch (enemyState){
             case State.Idle:
@@ -60,17 +60,19 @@ public class EnemyAI : MonoBehaviour
                     StartCoroutine(RigorCoolDown());
                 }
                 break;
+            case State.Dead:
+                break;
         }
     }
 
-    protected virtual void Start(){
+    public virtual void Start(){
         enemyState = State.Idle;
         targetPoint = patrolPoints[currentPatrolPoint];
         canAttack = true;
     }
 
     //Checks if the player is at a certain distance away from the enemy.
-    protected virtual bool DetectPlayer(float radious){
+    public virtual bool DetectPlayer(float radious){
         Collider2D[] collisions = Physics2D.OverlapCircleAll(transform.position, radious);
         foreach (Collider2D target in collisions){
             if(target?.gameObject.tag == playerTag){
@@ -81,14 +83,19 @@ public class EnemyAI : MonoBehaviour
         return false;
     }
 
-    protected virtual void Attack(){
-        Collider2D hit = Physics2D.OverlapCircle(attackSpot.position, attackRadious);
-        hit?.GetComponent<Health>()?.Damage(damage);
+    public virtual void Attack(){
+        // Collider2D hit = Physics2D.OverlapCircle(attackSpot.position, attackRadious);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRadious);
+
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.CompareTag("Player")) hit.GetComponent<Health>()?.Damage(damage);
+        }
     }
 
     //Moves the enemy to the patrol location in the array if it has reached it,
     //it should switch tot he next one.
-    protected virtual void Movement(){
+    public virtual void Movement(){
         if(Vector2.Distance(transform.position, targetPoint.position) <= attackRange){
             if(currentPatrolPoint == patrolPoints.Length-1){
                 currentPatrolPoint = 0;
@@ -109,7 +116,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     //Flips the sprite whenever the player changes direction.
-    protected void Flip()
+    public void Flip()
     {
         Vector2 scale = transform.localScale;
         scale.x *= -1f;
@@ -117,13 +124,13 @@ public class EnemyAI : MonoBehaviour
         isFacingRight = !isFacingRight;
     }
 
-    protected virtual IEnumerator AttackCoolDown(){
+    public virtual IEnumerator AttackCoolDown(){
         canAttack = false;
         yield return new WaitForSeconds(attackCoolDown);
         canAttack = true;
     }
 
-    protected virtual IEnumerator RigorCoolDown(){
+    public virtual IEnumerator RigorCoolDown(){
         rigorStarted = true;
         State temp  = enemyState;
         yield return new WaitForSeconds(rigorCoolDown);

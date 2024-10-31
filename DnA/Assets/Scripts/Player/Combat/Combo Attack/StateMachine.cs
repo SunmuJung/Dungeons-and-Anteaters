@@ -1,17 +1,37 @@
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
     [SerializeField] public string customName;
-
     [SerializeField] private State mainStateType;
-
     [SerializeField] public State CurrentState { get; private set; }
     [SerializeField] private State nextState;
+
+    private PlayerStatus status;
+
+    private void Awake()
+    {
+        status = GetComponent<PlayerStatus>();
+
+        SetNextStateToMain();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        // if (CurrentState != null) Debug.Log(CurrentState.GetType().Name);
+        if (CurrentState == null || CurrentState.GetType().Name == typeof(IdleCombatState).Name)
+        {
+            status.isBasicAttacking = false;
+        }
+        else
+        {
+            status.isBasicAttacking = true;
+        }
+
+
         if (nextState != null)
         {
             SetState(nextState);
@@ -57,11 +77,6 @@ public class StateMachine : MonoBehaviour
         nextState = mainStateType;
     }
 
-    private void Awake()
-    {
-        SetNextStateToMain();
-
-    }
 
     private void OnValidate()
     {

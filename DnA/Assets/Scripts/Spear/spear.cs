@@ -20,6 +20,7 @@ public class spear : MonoBehaviour
     void Update()
     {
         transform.Translate(direction * speed * Time.deltaTime);
+        transform.localScale = new Vector3(direction.x, transform.localScale.y, transform.localScale.z);
     }
 
     // Detects whether the spear is hit

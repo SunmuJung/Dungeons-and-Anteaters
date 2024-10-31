@@ -10,10 +10,16 @@ public class PlayerColdAttack : MonoBehaviour
     [SerializeField] private Transform pos;
     [SerializeField] private float cooltime;
     private bool CanShoot = true;
+    private Animator animator;
     private PlayerControls playerInput;
     private PlayerMovement playerMovement;
 
+    private PlayerStatus status;
+
     private void Awake(){
+        animator = GetComponent<Animator>();
+        status = GetComponent<PlayerStatus>(); 
+
         playerInput = new();
         playerInput.Player.ColdSkill.performed += ColdSkillAttack;
         OnEnable();
@@ -35,20 +41,35 @@ public class PlayerColdAttack : MonoBehaviour
 
     private void ColdSkillAttack(InputAction.CallbackContext context)
     {
-        if(CanShoot){
-            GameObject projectile = Instantiate(spear, pos.position, transform.rotation);
-            Vector2 dir = Vector2.left;
-            if(playerMovement.FacingRight){
-                dir = Vector2.right;
-            }
-            projectile.GetComponent<spear>().Direction = dir;
+        if (status.isAttacking) return;
+        
+        if (CanShoot){
+            status.isSkill = true;
+            animator.SetTrigger("FrostSkill");
+            StartCoroutine("generateSpear");
+
             StartCoroutine(cooldown());
         }
+    }
+
+    IEnumerator generateSpear()
+    {
+        yield return new WaitForSecondsRealtime(0.55f);
+        GameObject projectile = Instantiate(spear, pos.position + new Vector3(0, 0.5f), transform.rotation);
+        Vector2 dir = playerMovement.FacingRight ? Vector2.right : Vector2.left;
+        
+        projectile.GetComponent<spear>().Direction = dir;
     }
 
     IEnumerator cooldown(){
         CanShoot = false;
         yield return new WaitForSeconds(cooltime);
         CanShoot = true;
+    }
+
+    IEnumerator OnAnimationEnd()
+    {
+        status.isSkill = false;
+        yield break;
     }
 }

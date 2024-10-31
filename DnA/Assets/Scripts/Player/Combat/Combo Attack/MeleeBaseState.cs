@@ -30,7 +30,7 @@ public class MeleeBaseState : State
         base.OnEnter(_stateMachine);
         animator = GetComponent<Animator>();
         collidersDamaged = new List<Collider2D>();
-        hitCollider = GetComponent<ComboCharacter>().hitbox;
+        // hitCollider = GetComponent<ComboCharacter>().hitbox;
         HitEffectPrefab = GetComponent<ComboCharacter>().Hiteffect;
     }
 
@@ -45,7 +45,7 @@ public class MeleeBaseState : State
         }
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("x"))
         {
             AttackPressedTimer = 2;
         }
@@ -66,6 +66,7 @@ public class MeleeBaseState : State
         Collider2D[] collidersToDamage = new Collider2D[10];
         ContactFilter2D filter = new ContactFilter2D();
         filter.useTriggers = true;
+        /*
         int colliderCount = Physics2D.OverlapCollider(hitCollider, filter, collidersToDamage);
         for (int i = 0; i < colliderCount; i++)
         {
@@ -83,6 +84,7 @@ public class MeleeBaseState : State
                 }
             }
         }
+        */
     }
 
 }

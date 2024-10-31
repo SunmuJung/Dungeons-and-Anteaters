@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
     }
 
     //Does something when health is 0.
-    protected virtual void OnDead(){
+    public virtual void OnDead(){
         Destroy(gameObject);
     }
 }

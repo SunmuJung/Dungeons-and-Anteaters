@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.Playables;
 
 //This class is in charge on managing the movement of the player; back and forth, jumping, and dashing.
 public class PlayerMovement : MonoBehaviour
@@ -14,9 +15,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private TrailRenderer tail;
     [SerializeField] private LayerMask layer;
 
+    private PlayerStatus status;
     private Rigidbody2D rb;
     private PlayerControls playerControls;
-    protected Animator animator;
+    private Animator animator;
     private bool hasDashed, facingRight = true;
     private Vector2 playerDirection;
     //Property only read tells if the player is facing right.
@@ -26,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        status = GetComponent<PlayerStatus>();
 
         playerControls = new();
         playerControls.Player.Movement.started += Movement;
@@ -61,12 +64,30 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.position += (Vector3)playerDirection * Time.deltaTime;
         GroundCheck();
+        status.isAir = !OnGround();
+
+        if (status.isAttacking)
+        {
+            playerControls.Player.Movement.Disable();
+            playerControls.Player.Jump.Disable();
+            playerControls.Player.Dash.Disable();
+        }
+        else
+        {
+            playerControls.Player.Movement.Enable();
+            playerControls.Player.Jump.Enable();
+            playerControls.Player.Dash.Enable();
+        }
     }
+
+
 
     private bool IsGrounded()
     {
         return Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.1f, layer).collider != null;
     }
+
+    
 
     private bool OnGround()
     {
@@ -81,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
     //Adds impulsive force upwards on the player eveytime the player is over a "steppable" object.
     private void Jump(InputAction.CallbackContext context)
     {
-        // if (animator.is)
         animator.SetTrigger("Jump");
 
         
@@ -137,16 +157,16 @@ public class PlayerMovement : MonoBehaviour
         float gravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashForce, 0f);
-        //Emits a nice trail behind the player
-        tail.emitting = true;
+        // Emits a nice trail behind the player
+        // tail.emitting = true;
         playerControls.Player.Movement.Disable();
 
         yield return new WaitForSecondsRealtime(length);
 
         rb.gravityScale = gravity;
         rb.velocity = Vector2.zero;
-        //Stops emitting a nice trail behind the player
-        tail.emitting = false;
+        // Stops emitting a nice trail behind the player
+        // tail.emitting = false;
         playerControls.Player.Movement.Enable();
 
         yield return new WaitForSecondsRealtime(coolDown);

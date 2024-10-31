@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     // the slider representing the current health
+    [SerializeField]
     private Slider healthSlider;
 
     private void Start()

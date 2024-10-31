@@ -11,8 +11,18 @@ public class FireSkill : MonoBehaviour
     [SerializeField] private GameObject FireFist;
     [SerializeField] private Transform pos;
     [SerializeField] private float cooldown = 2f;
+
+    private Animator animator;
     private PlayerControls combatControls;
     private bool canFireBall = true;
+
+    private PlayerStatus status;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        status = GetComponent<PlayerStatus>();
+    }
 
     private void Start()
     {
@@ -26,8 +36,6 @@ public class FireSkill : MonoBehaviour
 
     }
 
-   
-
     private void OnDisable()
     {
         combatControls.Player.fireSkill.Disable();
@@ -35,11 +43,21 @@ public class FireSkill : MonoBehaviour
 
     private void fireSkill(InputAction.CallbackContext context)
     {
+        if (status.isAttacking) return;
+
         if (canFireBall)
         {
+            status.isSkill = true;
+            animator.SetTrigger("FireSkill");
             StartCoroutine(FireCoolDown(cooldown));
-            var FireFIst = Instantiate(FireFist, pos.position, pos.rotation);
+            StartCoroutine("GenerateFireBall");
+            
         }
+    }
+    IEnumerator GenerateFireBall()
+    {
+        yield return new WaitForSecondsRealtime(0.55f);
+        var FireFIst = Instantiate(FireFist, pos.position, pos.rotation);
     }
 
     IEnumerator FireCoolDown(float time)
@@ -47,6 +65,12 @@ public class FireSkill : MonoBehaviour
         canFireBall = false;
         yield return new WaitForSeconds(time);
         canFireBall = true;
+    }
+
+    IEnumerator OnAnimationEnd()
+    {
+        status.isSkill = false;
+        yield break;
     }
 
 }

@@ -34,6 +34,8 @@ public class FireFist : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, radius, dir, range, attackLayer);
         foreach (RaycastHit2D hit in hits)
         {
+            if (hit.collider.CompareTag("Player")) continue;
+
             Health healthComponent;
             if (hit.collider.TryGetComponent<Health>(out healthComponent))
             {
