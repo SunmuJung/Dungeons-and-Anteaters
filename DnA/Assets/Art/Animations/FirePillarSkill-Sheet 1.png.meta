@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e694ad206e92eb40b1b3cd3cc6c81d0
+guid: 79308254c59f02849ab71bd810706826
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,6 +72,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -110,211 +123,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_0
+      name: FirePillarSkill-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d23463e9585af540a8dbafb12dadf4c
-      internalID: -677721335
+      spriteID: 701fcb0eb783db54699617ce2aee9351
+      internalID: -2099193188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_1
+      name: FirePillarSkill-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 180
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dd4e60e25f9a374fb1e5e90f71518f2
-      internalID: 1144918918
+      spriteID: 48077eb6147f7914b8918ee7c0f20ee5
+      internalID: -714532034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_2
+      name: FirePillarSkill-Sheet 1_2
       rect:
         serializedVersion: 2
         x: 360
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 174a872645bb37f478ad07d67efeb48d
-      internalID: 1941237965
+      spriteID: 8e7005f066cab3d419ad4c28696aa2d4
+      internalID: 1329411469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_3
+      name: FirePillarSkill-Sheet 1_3
       rect:
         serializedVersion: 2
         x: 540
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a90936913c1e69147831a50ae59b69a1
-      internalID: -1427013300
+      spriteID: eddb2f2b838657a47acbdd911c2f7ab0
+      internalID: 455425420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_4
+      name: FirePillarSkill-Sheet 1_4
       rect:
         serializedVersion: 2
         x: 720
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57f52b644e8ce3d4eb30afd38d98a1dc
-      internalID: 1945496251
+      spriteID: d91bb644a0dac5143903b87812fdf2b8
+      internalID: -1476161067
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_5
+      name: FirePillarSkill-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 900
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f14baf395ebb0184bad9fe101eac1f27
-      internalID: -1967806032
+      spriteID: 397a8d4ce16b1784e95fe679b80b25b7
+      internalID: 2029919812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_6
+      name: FirePillarSkill-Sheet 1_6
       rect:
         serializedVersion: 2
         x: 1080
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ffaa0db91d5e8944a6946049b9b0696
-      internalID: 423243913
+      spriteID: cf95578ea9eccff4fbec8ce0e83ec334
+      internalID: -234559645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_7
+      name: FirePillarSkill-Sheet 1_7
       rect:
         serializedVersion: 2
         x: 1260
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99ee4d9caea06a446b476633101a1934
-      internalID: -1585292464
+      spriteID: 68a364e2ca74bdb41bdb91489ff50baf
+      internalID: 830813110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_8
+      name: FirePillarSkill-Sheet 1_8
       rect:
         serializedVersion: 2
         x: 1440
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eb61e7a1551a1947a24b9cf4982bbc1
-      internalID: -1717061867
+      spriteID: edc31f8b35743a7419a18f822f7ddcf9
+      internalID: -1234039054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FirePillarSkill-Sheet_9
+      name: FirePillarSkill-Sheet 1_9
       rect:
         serializedVersion: 2
         x: 1620
         y: 0
         width: 180
-        height: 116
-      alignment: 9
-      pivot: {x: 0.36, y: 0.36}
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d12f203779605f14c8eeacfb155152b2
-      internalID: 475683075
+      spriteID: 3c73db7e23b607d40be34a494fccfb34
+      internalID: -1565556327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirePillarSkill-Sheet 1_10
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 180
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47de3b87faf64594f8a09865f3e82435
+      internalID: 1693702399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirePillarSkill-Sheet 1_11
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 0
+        width: 180
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca300af858001b140bcf154ba21e217c
+      internalID: -1211548037
       vertices: []
       indices: 
       edges: []
@@ -330,16 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FirePillarSkill-Sheet_0: -677721335
-      FirePillarSkill-Sheet_1: 1144918918
-      FirePillarSkill-Sheet_2: 1941237965
-      FirePillarSkill-Sheet_3: -1427013300
-      FirePillarSkill-Sheet_4: 1945496251
-      FirePillarSkill-Sheet_5: -1967806032
-      FirePillarSkill-Sheet_6: 423243913
-      FirePillarSkill-Sheet_7: -1585292464
-      FirePillarSkill-Sheet_8: -1717061867
-      FirePillarSkill-Sheet_9: 475683075
+      FirePillarSkill-Sheet 1_0: -2099193188
+      FirePillarSkill-Sheet 1_1: -714532034
+      FirePillarSkill-Sheet 1_10: 1693702399
+      FirePillarSkill-Sheet 1_11: -1211548037
+      FirePillarSkill-Sheet 1_2: 1329411469
+      FirePillarSkill-Sheet 1_3: 455425420
+      FirePillarSkill-Sheet 1_4: -1476161067
+      FirePillarSkill-Sheet 1_5: 2029919812
+      FirePillarSkill-Sheet 1_6: -234559645
+      FirePillarSkill-Sheet 1_7: 830813110
+      FirePillarSkill-Sheet 1_8: -1234039054
+      FirePillarSkill-Sheet 1_9: -1565556327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
