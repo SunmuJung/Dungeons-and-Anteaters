@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1192b1c4fed065a4fa67b296df003a99
+guid: 370037ca8cdcdb540b78be85b23942b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 35
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,190 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BA3-Sheet_0
+      name: rat_flinch_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 250
+        width: 100
         height: 100
       alignment: 9
-      pivot: {x: 0.4535186, y: 0.32366586}
+      pivot: {x: 0.53333336, y: 0.46707806}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92d104a6bb5ef9f448a965a64726925f
-      internalID: -1160612386
+      spriteID: da08f7788a0eaab4a90a9c6bce81473f
+      internalID: 1245956199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA3-Sheet_1
+      name: rat_flinch_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 250
+        x: 100
         y: 0
-        width: 250
+        width: 100
         height: 100
       alignment: 9
-      pivot: {x: 0.4559508, y: 0.32171017}
+      pivot: {x: 0.5614235, y: 0.51963013}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbc1fb654b5537148b37cb10eaf5a3f4
-      internalID: 222743973
+      spriteID: 4ba07eb9d26f60f43b3f8b638038a5af
+      internalID: 321736838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA3-Sheet_2
+      name: rat_flinch_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 499
+        x: 200
         y: 0
-        width: 250
+        width: 100
         height: 100
       alignment: 9
-      pivot: {x: 0.4583572, y: 0.32598695}
+      pivot: {x: 0.5574974, y: 0.5157041}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36f9634447afa9e4385798f66fa5cce8
-      internalID: 618107826
+      spriteID: 8a5a5197b3a043c43936403eae84eff4
+      internalID: -1835143714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BA3-Sheet_3
+      name: rat_flinch_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 750
+        x: 300
         y: 0
-        width: 250
+        width: 100
         height: 100
       alignment: 9
-      pivot: {x: 0.46033937, y: 0.3292329}
+      pivot: {x: 0.54964507, y: 0.51177806}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 795ef5dbaa2dcd14a83b74e93378988d
-      internalID: 2112630888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 250
-        height: 100
-      alignment: 9
-      pivot: {x: 0.45593214, y: 0.34025028}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 012248c5370d4d1439d4b11c3ac0c484
-      internalID: -254759449
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 1250
-        y: 0
-        width: 250
-        height: 100
-      alignment: 9
-      pivot: {x: 0.45813575, y: 0.33474168}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b21d4eb15430e1741b444974f045d068
-      internalID: -1743978824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 1499
-        y: 0
-        width: 250
-        height: 100
-      alignment: 9
-      pivot: {x: 0.45813575, y: 0.33474186}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a13ec4fc56686754288d0dbcc6f22112
-      internalID: -1906348327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1750
-        y: 0
-        width: 250
-        height: 100
-      alignment: 9
-      pivot: {x: 0.46033984, y: 0.33474168}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adec724437cd5014197ce4a59b069bf4
-      internalID: 999939957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BA3-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 250
-        height: 100
-      alignment: 9
-      pivot: {x: 0.45813575, y: 0.34025046}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd72bfd9624e09445af0b9bf713b9a6f
-      internalID: 703747415
+      spriteID: 9e1dbb3a0767c4040b6ea49d6d7ddb2d
+      internalID: 901828811
       vertices: []
       indices: 
       edges: []
@@ -322,15 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BA3-Sheet_0: -1160612386
-      BA3-Sheet_1: 222743973
-      BA3-Sheet_2: 618107826
-      BA3-Sheet_3: 2112630888
-      BA3-Sheet_4: -254759449
-      BA3-Sheet_5: -1743978824
-      BA3-Sheet_6: -1906348327
-      BA3-Sheet_7: 999939957
-      BA3-Sheet_8: 703747415
+      rat_flinch_spritesheet_0: 1245956199
+      rat_flinch_spritesheet_1: 321736838
+      rat_flinch_spritesheet_2: -1835143714
+      rat_flinch_spritesheet_3: 901828811
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
