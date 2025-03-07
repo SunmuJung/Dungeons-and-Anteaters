@@ -21,18 +21,9 @@ public class StateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (CurrentState != null) Debug.Log(CurrentState.GetType().Name);
-        if (CurrentState == null || CurrentState.GetType().Name == typeof(IdleCombatState).Name)
-        {
-            status.isBasicAttacking = false;
-        }
-        else
-        {
-            status.isBasicAttacking = true;
-        }
 
 
-        if (nextState != null)
+        if (nextState != null && !status.isBasicAttacking)
         {
             SetState(nextState);
         }

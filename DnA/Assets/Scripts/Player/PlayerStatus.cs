@@ -11,6 +11,7 @@ public class PlayerStatus : MonoBehaviour
     public bool isSkill;
     public bool isAir;
     public bool isAttacking;
+    public bool isWalking;
     public string curStateName;
 
     private void Awake()
@@ -22,15 +23,6 @@ public class PlayerStatus : MonoBehaviour
     void Update()
     {
         updateIsAttacking();
-        /*
-
-        Debug.Log(!anim.GetCurrentAnimatorStateInfo(0).IsTag("skill"));
-        // if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && isSkill == true)
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsTag("skill") && isSkill == true)
-        {
-            isSkill = false;
-        }
-        //*/
     }
 
     void updateIsAttacking()

@@ -9,7 +9,6 @@ public class PlayerColdAttack : MonoBehaviour
     [SerializeField] private GameObject spear;
     [SerializeField] private Transform pos;
     [SerializeField] private float cooltime;
-    private bool CanShoot = true;
     private Animator animator;
     private PlayerControls playerInput;
     private PlayerMovement playerMovement;
@@ -42,14 +41,9 @@ public class PlayerColdAttack : MonoBehaviour
     private void ColdSkillAttack(InputAction.CallbackContext context)
     {
         if (status.isAttacking) return;
-        
-        if (CanShoot){
-            status.isSkill = true;
-            animator.SetTrigger("FrostSkill");
-            StartCoroutine("generateSpear");
-
-            StartCoroutine(cooldown());
-        }
+        status.isSkill = true;
+        animator.SetTrigger("FrostSkill");
+        StartCoroutine("generateSpear");
     }
 
     IEnumerator generateSpear()
@@ -59,17 +53,5 @@ public class PlayerColdAttack : MonoBehaviour
         Vector2 dir = playerMovement.FacingRight ? Vector2.right : Vector2.left;
         
         projectile.GetComponent<spear>().Direction = dir;
-    }
-
-    IEnumerator cooldown(){
-        CanShoot = false;
-        yield return new WaitForSeconds(cooltime);
-        CanShoot = true;
-    }
-
-    IEnumerator OnAnimationEnd()
-    {
-        status.isSkill = false;
-        yield break;
     }
 }

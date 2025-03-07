@@ -67,11 +67,5 @@ public class FireSkill : MonoBehaviour
         canFireBall = true;
     }
 
-    IEnumerator OnAnimationEnd()
-    {
-        status.isSkill = false;
-        yield break;
-    }
-
 }
     

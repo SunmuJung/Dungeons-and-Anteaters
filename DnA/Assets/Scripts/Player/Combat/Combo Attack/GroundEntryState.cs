@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GroundEntryState : MeleeBaseState
 {
+
     public override void OnEnter(StateMachine _stateMachine)
     {
         base.OnEnter(_stateMachine);
@@ -19,16 +20,16 @@ public class GroundEntryState : MeleeBaseState
     {
         base.OnUpdate();
 
-        if (fixedtime >= duration)
+        // if (fixedtime >= duration)
+        // {
+        if (shouldCombo)
         {
-            if (shouldCombo)
-            {
-                stateMachine.SetNextState(new GroundComboState());
-            }
-            else
-            {
-                stateMachine.SetNextStateToMain();
-            }
+            stateMachine.SetNextState(new GroundComboState());
         }
+        else
+        {
+            stateMachine.SetNextStateToMain();
+        }
+        // }
     }
 }

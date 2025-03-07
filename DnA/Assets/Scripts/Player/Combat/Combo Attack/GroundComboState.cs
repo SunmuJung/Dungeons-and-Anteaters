@@ -19,16 +19,16 @@ public class GroundComboState : MeleeBaseState
     {
         base.OnUpdate();
 
-        if (fixedtime >= duration)
+        // if (fixedtime >= duration)
+        // {
+        if (shouldCombo)
         {
-            if (shouldCombo)
-            {
-                stateMachine.SetNextState(new GroundFinisherState());
-            }
-            else
-            {
-                stateMachine.SetNextStateToMain();
-            }
+            stateMachine.SetNextState(new GroundFinisherState());
         }
+        else
+        {
+            stateMachine.SetNextStateToMain();
+        }
+        // }
     }
 }

@@ -1621,6 +1621,7 @@ MonoBehaviour:
   isSkill: 0
   isAir: 0
   isAttacking: 0
+  isWalking: 0
   curStateName: 
 --- !u!1 &1426496692
 GameObject:

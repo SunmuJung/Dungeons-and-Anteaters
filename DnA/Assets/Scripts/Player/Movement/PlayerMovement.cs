@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Playables;
+using UnityEngine.UIElements;
 
 //This class is in charge on managing the movement of the player; back and forth, jumping, and dashing.
 public class PlayerMovement : MonoBehaviour
@@ -21,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private bool hasDashed, facingRight = true;
     private Vector2 playerDirection;
+    private Vector2 prevPos;
+    private Vector2 currPos;
     //Property only read tells if the player is facing right.
     public bool FacingRight{get{return facingRight;}}
 
@@ -29,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         status = GetComponent<PlayerStatus>();
+        currPos = transform.position;
+        prevPos = currPos;
 
         playerControls = new();
         playerControls.Player.Movement.started += Movement;
@@ -65,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position += (Vector3)playerDirection * Time.deltaTime;
         GroundCheck();
         status.isAir = !OnGround();
+        updateSpeed();
 
         if (status.isAttacking)
         {
@@ -80,11 +86,27 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    private void updateSpeed()
+    {
+        float observedSpeedX = Mathf.Abs((currPos.x - prevPos.x) / Time.deltaTime);
+        // Debug.Log(observedSpeedX);
+        // playerCurrentSpeedX = observedSpeedX;
+        if (status.isWalking != (observedSpeedX > 0.1f))
+        {
+            status.isWalking = observedSpeedX > 0.1f;
+            animator.SetBool("isWalking", status.isWalking);
+        }
+        prevPos = currPos;
+        currPos = transform.position;
+    }
 
     private bool IsGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.1f, layer).collider != null;
+        
+        Collider2D underPlayer = Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.3f, layer).collider;
+        Debug.Log(underPlayer);
+        Debug.Log(transform.position);
+        return underPlayer != null ? underPlayer.tag == "Ground" : false;
     }
 
     
