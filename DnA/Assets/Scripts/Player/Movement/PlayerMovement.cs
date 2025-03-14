@@ -105,7 +105,6 @@ public class PlayerMovement : MonoBehaviour
         
         Collider2D underPlayer = Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.3f, layer).collider;
         Debug.Log(underPlayer);
-        Debug.Log(transform.position);
         return underPlayer != null ? underPlayer.tag == "Ground" : false;
     }
 
@@ -113,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool OnGround()
     {
-        return IsGrounded() && Mathf.Abs(rb.velocity.y) <= 0.01f;
+        return IsGrounded();// && Mathf.Abs(rb.velocity.y) <= 0.01f;
     }
 
     private void GroundCheck()
