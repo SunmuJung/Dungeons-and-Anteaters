@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] protected string playerTag;
     [SerializeField] protected Transform[] patrolPoints;
     [SerializeField] protected State enemyState;
+    private Animator animator;
     protected Transform targetPoint, playerPosition;
     protected int currentPatrolPoint;
     public bool isFacingRight, canAttack, rigorStarted;
@@ -23,52 +24,58 @@ public class EnemyAI : MonoBehaviour
         Dead
     }
 
+    public virtual void Start(){
+        enemyState = State.Idle;
+        targetPoint = patrolPoints[currentPatrolPoint];
+        animator = GetComponent<Animator>();
+        canAttack = true;
+    }
+
     public virtual void Update()
     {
-        switch (enemyState){
+        switch (enemyState)
+        {
             case State.Idle:
                 targetPoint = patrolPoints[currentPatrolPoint];
-                Movement();
-                if(DetectPlayer(playerDetectionRange)){
+                animator.SetBool("Move", false);
+                if (DetectPlayer(playerDetectionRange))
+                {
                     enemyState = State.Chasing;
                 }
                 break;
             case State.Chasing:
                 targetPoint = playerPosition;
                 Movement();
-                if(DetectPlayer(attackRange)){
+                animator.SetBool("Move", true);
+                if (DetectPlayer(attackRange))
+                {
                     enemyState = State.Attacking;
                 }
-                else if (!DetectPlayer(playerDetectionRange)){
-                    enemyState = State.Idle;
-                }
-                break; 
+                break;
             case State.Attacking:
-                if(canAttack){
+                if (canAttack)
+                {
                     Attack();
                     StartCoroutine(AttackCoolDown());
                 }
-                if(!DetectPlayer(playerDetectionRange)){
+                if (!DetectPlayer(playerDetectionRange))
+                {
                     enemyState = State.Idle;
                 }
-                else if (!DetectPlayer(attackRange)){
+                else if (!DetectPlayer(attackRange))
+                {
                     enemyState = State.Chasing;
                 }
                 break;
             case State.Rigor:
-                if(!rigorStarted){
+                if (!rigorStarted)
+                {
                     StartCoroutine(RigorCoolDown());
                 }
                 break;
             case State.Dead:
                 break;
         }
-    }
-
-    public virtual void Start(){
-        enemyState = State.Idle;
-        targetPoint = patrolPoints[currentPatrolPoint];
-        canAttack = true;
     }
 
     //Checks if the player is at a certain distance away from the enemy.
@@ -83,13 +90,17 @@ public class EnemyAI : MonoBehaviour
         return false;
     }
 
-    public virtual void Attack(){
+    public virtual void Attack()
+    {
         // Collider2D hit = Physics2D.OverlapCircle(attackSpot.position, attackRadious);
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRadious);
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.CompareTag("Player")) hit.GetComponent<Health>()?.Damage(damage);
+            if (hit.CompareTag("Player"))
+            {
+                hit.GetComponent<Health>()?.Damage(10); // 플레이어에게 10의 데미지를 추가로 줌
+            }
         }
     }
 
