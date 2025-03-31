@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Collider2D underPlayer = Physics2D.Raycast(transform.position, Vector2.down, playerHeigth + 0.3f, layer).collider;
-        Debug.Log(underPlayer);
+        // Debug.Log(underPlayer);
         return underPlayer != null ? underPlayer.tag == "Ground" : false;
     }
 

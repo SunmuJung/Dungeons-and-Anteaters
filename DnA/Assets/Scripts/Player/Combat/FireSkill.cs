@@ -1,6 +1,7 @@
 using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,17 +12,21 @@ public class FireSkill : MonoBehaviour
     [SerializeField] private GameObject FireFist;
     [SerializeField] private Transform pos;
     [SerializeField] private float cooldown = 2f;
+    [SerializeField] public GameObject Canvas;
 
     private Animator animator;
     private PlayerControls combatControls;
     private bool canFireBall = true;
 
     private PlayerStatus status;
-
+    private SkillCoolDown cooldownUI;
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
         status = GetComponent<PlayerStatus>();
+        cooldownUI = Canvas.GetComponentInChildren<SkillCoolDown>();
+        cooldownUI.cooldownTime[1] = cooldown;
     }
 
     private void Start()
@@ -48,6 +53,7 @@ public class FireSkill : MonoBehaviour
         if (canFireBall)
         {
             status.isSkill = true;
+            cooldownUI.StartCooldown(1);
             animator.SetTrigger("FireSkill");
             StartCoroutine(FireCoolDown(cooldown));
             StartCoroutine("GenerateFireBall");
