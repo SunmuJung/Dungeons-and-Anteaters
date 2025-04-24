@@ -2214,18 +2214,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1627064604}
     m_Modifications:
-    - target: {fileID: 354835149980756800, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 354835149980756800, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 354835149980756800, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_Color.r
-      value: 0.5471698
-      objectReference: {fileID: 0}
     - target: {fileID: 3095111848060744558, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2237,26 +2225,6 @@ PrefabInstance:
     - target: {fileID: 3331133320903934367, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
       propertyPath: m_Name
       value: Health Bar
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477554610745337004, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 625.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3477554610745337004, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 15.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127263368939687443, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 625.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127263368939687443, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 15.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5819784718282868458, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_Interactable
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6334040168207478649, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2289,6 +2257,14 @@ PrefabInstance:
     - target: {fileID: 8068636794341779839, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
       propertyPath: m_AnchorMin.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068636794341779839, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068636794341779839, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8068636794341779839, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2336,10 +2312,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068636794341779839, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8473046496223212496, guid: cb0b7c1fa95680e4e9633c246a60d561, type: 3}
-      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
